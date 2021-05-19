@@ -83,8 +83,17 @@ lazy val `thoth-jooq-async` = project
     crossPaths := true
   )
 
-lazy val `thoth-core` = project
+lazy val `thoth-core`       = project
   .dependsOn(`commons-events`, `thoth-kafka-goodies`)
+  .settings(
+    sonatypeRepository := "https://s01.oss.sonatype.org/service/local",
+    sonatypeCredentialHost := "s01.oss.sonatype.org",
+    scalaVersion := "2.12.13",
+    crossScalaVersions := List("2.13.5", "2.12.13"),
+    crossPaths := true
+  )
+lazy val `thoth-springboot` = project
+  .dependsOn(`thoth-jooq`)
   .settings(
     sonatypeRepository := "https://s01.oss.sonatype.org/service/local",
     sonatypeCredentialHost := "s01.oss.sonatype.org",
