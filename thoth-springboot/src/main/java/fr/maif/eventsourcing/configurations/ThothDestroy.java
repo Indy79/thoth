@@ -11,8 +11,14 @@ import java.util.concurrent.ExecutorService;
 @Configuration
 public class ThothDestroy {
 
-	@Autowired ActorSystem actorSystem;
-	@Autowired ExecutorService executorService;
+	private final ActorSystem actorSystem;
+	private final ExecutorService executorService;
+
+	@Autowired
+	public ThothDestroy(ActorSystem actorSystem, ExecutorService executorService) {
+		this.actorSystem = actorSystem;
+		this.executorService = executorService;
+	}
 
 	@PreDestroy
 	public void destroy() {

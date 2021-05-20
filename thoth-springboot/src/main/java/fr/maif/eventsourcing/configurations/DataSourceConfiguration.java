@@ -3,6 +3,7 @@ package fr.maif.eventsourcing.configurations;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,6 +12,7 @@ import java.util.Optional;
 
 @Configuration
 @ConditionalOnBean(DataSource.class)
+@ConditionalOnProperty("thoth.datasource")
 public class DataSourceConfiguration {
 
 	private final DataSourceProperties properties;
