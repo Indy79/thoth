@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+fr.maif.eventsourcing.configurations.AkkaConfiguration, \
+fr.maif.eventsourcing.configurations.DataSourceConfiguration, \
+fr.maif.eventsourcing.configurations.KafkaConfiguration, \
+fr.maif.eventsourcing.configurations.ThothConfiguration, \
+fr.maif.eventsourcing.configurations.KafkaProperties, \
+fr.maif.eventsourcing.configurations.DataSourceProperties, \
+fr.maif.eventsourcing.configurations.ThothDestroy
